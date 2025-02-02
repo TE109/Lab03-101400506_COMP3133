@@ -39,19 +39,6 @@ app.get("/restaurants/cuisine/:type",async (req,res) => {
     }
 })
 
-// Rest API To get all Resturants by Type 
-app.get("/restaurants/cuisine/:type",async (req,res) => {
-    const filter = {
-        cuisine : req.params.type,
-    }
-    try {
-        const restaurant = await restaurants.find(filter);
-        res.status(200).send(restaurant);
-    } catch (error) {
-        console.log("ERROR: " + error);
-        res.status(500).send(error);        
-    }
-})
 
 // Rest API To get all Returant _id, cuisines, name, city, resturant_id and Sort it by restaurant_id  
 app.get("/restaurant", async (req, res) => {
